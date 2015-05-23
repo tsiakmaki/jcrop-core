@@ -1,0 +1,11 @@
+==Step 1 - Specify the Content Ontology==
+
+The Content Ontology is used to capture knowledge about some Learning Object. 
+
+It describes the Concepts in the Object like the target and the prerequisite Concepts 
+and also the relationships between those Concepts (Figure 1). 
+
+[[File:/resources/jcropeditor/img/img1.png|border|Figure 1: Content Ontology Example]]
+
+
+In the editor, Authors can import a predefined ontology, edit it, or create a simple hierarchy of classes from scratch. 

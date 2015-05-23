@@ -1,0 +1,7 @@
+==Step 4 - Creating the XModels==
+
+Authors can define the Execution Models (XModel). One XGraph can be associated to one or more XModels. Learner's goal is to conquer the root Node of the XGraph. To succeed that, Learner has to previously attain every node that is connected to. Apart from having to succeed on prerequisite Concepts, the sequencing rules, the Dialogues and the Controls, no other restrictions take place on the way of how a Learner will walk on the XGraph. On the one hand, Discrete Mathematics literature lists several well-structured algorithms for traversing a graph, e.g Depth First, or Breadth First. On the other hand, further priorities can be set, in case the next x step is still ambiguous. E.g. the preference of executing an assessment resource over a support resource, or the preference of executing a Learning Object that is associated to a video resource, over a text resource.
+ 
+To support the above CROP associates an XModel with an execution algorithm, a priority list and a verbose level. Verbose level controls how detailed or general the information messages are going to be, i.e. whether the XManager will inform the reason of the next given Learning Object versus another to the Learner. 
+
+Generally, Authors can revise the initial Learning Object. The editor will synchronize the changes made on graphs and on the ontology through action listeners. E.g. if Author deletes a Concept Graph Node, the editor will delete the associated KRC Node and edges and subsequently the associated execution nodes and edges on X Graph. 

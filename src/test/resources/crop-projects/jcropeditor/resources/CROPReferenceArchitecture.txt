@@ -1,0 +1,10 @@
+==The CROP reference architecture==
+
+The CROP reference architecture is designed to model the structure of adaptive Learning Objects owned by Semantic Learning Services in a Learning Domain. The architecture supports the composition of Objects that suit to Learner's requirements, and the dynamic modifications of Objects during the learning process, through the collaboration of Learning Services. An adaptive response is the result of reasoning on information available from the Learner Profile, the Learning Objects, and the learning process.
+
+
+In CROP four notions take part: Concept, Resource, Order, and Product. A Learning Object is atomic (Resource), or composite (Product) that recursively contains other Learning Objects. Each Learning Object has one target Concept, i.e. a term that describes the educational objective of the Learning Object, and some prerequisite Concepts, i.e. Concepts that are required in order to use this resource. The whole learning process is monitored by Order, a process that is enabled for every Learner - Learning Object pair. Its main purpose is to help the Learner execute a learning process with success by providing the necessary information to the Learning Service that owns the Learning Object. 
+
+CROP Learning Objects are described by a set of metadata. The IEEE LOM standard is adopted for that purpose. 
+
+Moreover, each CROP Object is associated to one or more Learning Style Designators. The Designators indicate cognitive and learning style characteristics of Learners for whom this object is (more) appropriate. 

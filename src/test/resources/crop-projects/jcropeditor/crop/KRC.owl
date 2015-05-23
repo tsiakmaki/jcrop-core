@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.cs.teilar.gr/ontologies/KRC.owl#"
+     xml:base="http://www.cs.teilar.gr/ontologies/KRC.owl"
+     xmlns:conceptgraph="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#"
+     xmlns:LearningObject="http://www.cs.teilar.gr/ontologies/LearningObject.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:lom="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#"
+     xmlns:ContentOntologies="http://www.cs.teilar.gr/ontologies/KRC.owl#/home/maria/LearningObjects/kobject/ContentOntologies/"
+     xmlns:graph="http://www.cs.teilar.gr/ontologies/Graph.owl#"
+     xmlns:KObject="http://www.cs.teilar.gr/ontologies/KObject.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constructing the KRC (Knowledge Requirements Chart) of a CROP Learning Object is the third major step in the construction of the object.
+
+To construct the KRC, one copies the Concept Graph and associates Learning Objects to its nodes. Each concept graph node has an associated KConcept (the concept to be taught) and the associated Learning Objects need to chosen so that (a) they target (teach) the target concept (KConcept instance) of the node
+(b) any prerequisite concepts of the associated Learning Object are either  amongst the prerequisites of the CROP Learning Object under construction, or they must be previously taught by the CROP Learning Object under construction (they must be the concepts associated to predecessor nodes of the KRC).</rdfs:comment>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">January 11, 2011</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Takis Hartonas</dc:creator>
+        <owl:imports rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl"/>
+        <owl:imports rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObject.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#hasNode -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#hasNode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraph -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraph">
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphNode -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphNode">
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#Edge -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge">
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElement"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElementComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#Graph -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#Graph">
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElement"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElementComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#Node -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#Node">
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElement"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElementComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRC -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Graph"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasLeafNode"/>
+                <owl:allValuesFrom rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasTopNode"/>
+                <owl:allValuesFrom rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasNode"/>
+                <owl:allValuesFrom rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To construct the KRC, one copies the Concept Graph and associates Learning Objects to its nodes. Each concept graph node has an associated KConcept (the concept to be taught) and the associated Learning Objects need to chosen so that (a) they target (teach) the target concept (KConcept instance) of the node
+(b) any prerequisite concepts of the associated Learning Object are either  amongst the prerequisites of the CROP Learning Object under construction, or they must be previously taught by the CROP Learning Object under construction (they must be the concepts associated to predecessor nodes of the KRC).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#Node"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+                                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphNode"/>
+                                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+                                    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                        <owl:onClass rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphNode"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Node"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A KRCNode can be thought of as a pair of (a) a KConcept and (b) a Learning Object List. 
+
+To construct the KRC, one copies the Concept Graph and associates Learning Objects to its nodes (the KRCNodes). Each concept graph node has an associated KConcept (the concept to be taught) and the associated Learning Objects need to chosen so that (a) they target (teach) the target concept (KConcept instance) of the node
+(b) any prerequisite concepts of the associated Learning Object are either  amongst the prerequisites of the CROP Learning Object under construction, or they must be previously taught by the CROP Learning Object under construction (they must be the concepts associated to predecessor nodes of the KRC).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElement -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElement"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElementComponent -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOMElementComponent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectBuildingSteps_To_CROPEditor_jcropeditor_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectBuildingSteps_To_CROPEditor_jcropeditor_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectsDesignPrinciples_To_CROPObjectBuildingSteps_jcropeditor_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectsDesignPrinciples_To_CROPObjectBuildingSteps_jcropeditor_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPReferenceArchitecture_To_CROPObjectsDesignPrinciples_jcropeditor_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPReferenceArchitecture_To_CROPObjectsDesignPrinciples_jcropeditor_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_ConceptGraphBuildingSteps_To_KRCGraphBuildingSteps_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ConceptGraphBuildingSteps_To_KRCGraphBuildingSteps_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_ContentOntologyBuildingSteps_To_ConceptGraphBuildingSteps_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ContentOntologyBuildingSteps_To_ConceptGraphBuildingSteps_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionGraphBuildingSteps_To_ExecutionSample_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionGraphBuildingSteps_To_ExecutionSample_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionManagerBuildingSteps_To_ExecutionGraphBuildingSteps_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionManagerBuildingSteps_To_ExecutionGraphBuildingSteps_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionSample_To_CROPObjectBuildingSteps_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionSample_To_CROPObjectBuildingSteps_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_KRCGraphBuildingSteps_To_ExecutionManagerBuildingSteps_BuildingSteps_KRCEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_KRCGraphBuildingSteps_To_ExecutionManagerBuildingSteps_BuildingSteps_KRCEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#Edge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#BuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#BuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_BuildingSteps_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_BuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditorTest1_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditorTest1_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_CROPEditorTest1_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_CROPEditorTest1_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_CROPEditorTest1_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPEditor_CROPEditorTest1_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_jcropeditor_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_jcropeditor_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPEditor_jcropeditor_ConceptGraphNode"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectBuildingSteps_To_CROPEditor_jcropeditor_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionSample_To_CROPObjectBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_jcropeditor_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_jcropeditor_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectBuildingSteps_jcropeditor_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectBuildingSteps_To_CROPEditor_jcropeditor_KRCEdge"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectsDesignPrinciples_To_CROPObjectBuildingSteps_jcropeditor_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_jcropeditor_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_jcropeditor_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectsDesignPrinciples_jcropeditor_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPObjectsDesignPrinciples_To_CROPObjectBuildingSteps_jcropeditor_KRCEdge"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPReferenceArchitecture_To_CROPObjectsDesignPrinciples_jcropeditor_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_CropRefArch_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_CropRefArch_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPReferenceArchitecture_CropRefArch_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_jcropeditor_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_jcropeditor_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPReferenceArchitecture_jcropeditor_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_CROPReferenceArchitecture_To_CROPObjectsDesignPrinciples_jcropeditor_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ConceptGraphBuildingSteps_To_KRCGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ContentOntologyBuildingSteps_To_ConceptGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ContentOntologyBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ContentOntologyBuildingSteps_To_ConceptGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CropObjectBuildingStepsTest1_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CropObjectBuildingStepsTest1_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CropRefArch_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CropRefArch_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_CropRefArch_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionGraphBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionGraphBuildingSteps_To_ExecutionSample_BuildingSteps_KRCEdge"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionManagerBuildingSteps_To_ExecutionGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionManagerBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionManagerBuildingSteps_To_ExecutionGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_KRCGraphBuildingSteps_To_ExecutionManagerBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionSample_BuildingSteps_ConceptGraphNode"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionGraphBuildingSteps_To_ExecutionSample_BuildingSteps_KRCEdge"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ExecutionSample_To_CROPObjectBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_ExecutionSample_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_ExecutionSample_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionSample_ExecutionSample_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_ExecutionSample_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_BuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#KRCGraphBuildingSteps_BuildingSteps_ConceptGraphNode"/>
+        <graph:isEndOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_ConceptGraphBuildingSteps_To_KRCGraphBuildingSteps_BuildingSteps_KRCEdge"/>
+        <graph:isStartOf rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#From_KRCGraphBuildingSteps_To_ExecutionManagerBuildingSteps_BuildingSteps_KRCEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_KRCNode -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_KRCNode">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCNode"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_ConceptGraphNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#XManagerBuildingSteps_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#XManagerBuildingSteps_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_KRCNode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#jcropeditor_KRC -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#jcropeditor_KRC">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_jcropeditor_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_jcropeditor_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_jcropeditor_KRCNode"/>
+        <graph:hasNode rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_jcropeditor_KRCNode"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

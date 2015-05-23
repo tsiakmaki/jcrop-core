@@ -1,0 +1,9 @@
+.project
+.classpath
+.settings/*
+/.settings/*
+bin/*
+/bin/
+log4j-*
+/target/
+/src/test/resources/crop-projects/complex/crop/catalog-v001.xml

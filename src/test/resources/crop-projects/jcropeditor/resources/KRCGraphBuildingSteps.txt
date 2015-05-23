@@ -1,0 +1,7 @@
+==Step 3 - Creating the KRC Graph==
+
+The KRC Graph is built on top of Concept Graph. Editor duplicates Concept Graph Nodes and edges as KRC components. Only prerequisite Nodes are not contained. Authors can associate Learning Objects on each KRC Node. Objects may be contained in the project, or may be created as new (Resource or Product). The selected Node illustrates its target Concept and from the Content Ontology are inferred all the equivalent Concepts, if any. 
+
+[[File:/resources/jcropeditor/img/img7.png|border|Figure 7: KRC Graph example]]
+
+The Editor prompts notices in a problem panel when Authors add Objects with prerequisite Concepts that do not exist in the active Object. In the example Figure 1, Operation Concept is acquired after the successful execution of Resources of Conjuration (con), Addition (add), Division (div), Subtraction (sub) and Multiplication (mul). Notice that Real Number System Concept is not included in KRC (it won’t be taught). Thus it is a prerequisite Concept of this Learning Object.

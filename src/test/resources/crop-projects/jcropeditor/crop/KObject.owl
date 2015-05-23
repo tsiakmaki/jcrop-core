@@ -1,0 +1,1179 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.cs.teilar.gr/ontologies/KObject.owl#"
+     xml:base="http://www.cs.teilar.gr/ontologies/KObject.owl"
+     xmlns:LearningObject="http://www.cs.teilar.gr/ontologies/LearningObject.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xmodel="http://www.cs.teilar.gr/ontologies/XModel.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ConceptGraph="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#"
+     xmlns:LOM="http://www.cs.teilar.gr/ontologies/LOM.owl#"
+     xmlns:graph="http://www.cs.teilar.gr/ontologies/Graph.owl#"
+     xmlns:kconcept="http://www.cs.teilar.gr/ontologies/KConcept.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:KRC="http://www.cs.teilar.gr/ontologies/KRC.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:LearningObjectMetaData="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#">
+    <owl:Ontology rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">January 12, 2011</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Takis Hartonas</dc:creator>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The kobject ontology specifies the Concept-Resource-Order-Product reference architecture for Learning Objects.</rdfs:comment>
+        <owl:imports rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KConcept.owl#hasPrerequisite -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.teilar.gr/ontologies/KConcept.owl#hasPrerequisite"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#physicalFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#physicalFormat">
+        <owl:equivalentProperty rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#format"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#physicalLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#physicalLocation">
+        <owl:equivalentProperty rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#xmodeltype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#xmodeltype">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">breadth first</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depth first</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">poor dialogue</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rich dialogue</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user defined</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#format -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#format"/>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#location -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#location"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#AssessmentResource -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#AssessmentResource">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KResource"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#KObject -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#KObject">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                <owl:onClass rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRC"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                <owl:onClass rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraph"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#ExecutionModel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#hasPrerequisite"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#EducationalObjective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A KObject (Knowledge Object) is a CROP Learning Object (a Learning Object in the CROP Reference Architecture), a subspecies of a Learning Object. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#KProduct -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#KProduct">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KObject"/>
+        <owl:disjointWith rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#KResource -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#KResource">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#physicalFormat"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#physicalLocation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource">
+        <rdfs:subClassOf rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/LearningObject.owl#LearningObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#hasAssociated"/>
+                <owl:onClass rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ContentOntology"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#ExecutionModel -->
+
+    <owl:Class rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#ExecutionModel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#xmodeltype"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:oneOf>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">breadth first</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depth first</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">poor dialogue</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rich dialogue</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user defined</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wave</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </owl:oneOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_1_To_CROPReferenceArchitecture_Default_jcropeditor_XGraphEdge -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_1_To_CROPReferenceArchitecture_Default_jcropeditor_XGraphEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#IfFalseEdge"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_1_To_DialogueNode_1_Default_jcropeditor_XGraphEdge -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_1_To_DialogueNode_1_Default_jcropeditor_XGraphEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#IfTrueEdge"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_2_To_ContentOntologyBuildingSteps_Default_BuildingSteps_XGraphEdge -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_2_To_ContentOntologyBuildingSteps_Default_BuildingSteps_XGraphEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#IfFalseEdge"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_2_To_DialogueNode_2_Default_BuildingSteps_XGraphEdge -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/Graph.owl#From_Control_2_To_DialogueNode_2_Default_BuildingSteps_XGraphEdge">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/Graph.owl#IfTrueEdge"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#BuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#BuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KProduct"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#BuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPObjectBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#BuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#BuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_BuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditorTest1_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditorTest1_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#AssessmentResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPEditorTest1_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPEditor_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditorTest1_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPEditorTest1_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPEditorTest1_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditor_CROPEditorTest1_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditor_CROPEditorTest1_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\CROPEditorTest1.obj</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\CropObjectBuildingStepsTest1.obj</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\CROPObjectsDesignPrinciples.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CROPObjectsDesignPrinciples_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPObjectsDesignPrinciples_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPObjectsDesignPrinciples_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPObjectsDesignPrinciples_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CROPReferenceArchitecture_CropRefArch_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPReferenceArchitecture_CropRefArch_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\CROPReferenceArchitecture.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\ConceptGraphBuildingSteps.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ConceptGraphBuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#ConceptGraphBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ConceptGraphBuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ConceptGraphBuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\ContentOntologyBuildingSteps.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ContentOntologyBuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#ContentOntologyBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ContentOntologyBuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ContentOntologyBuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CropObjectBuildingStepsTest1_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CropObjectBuildingStepsTest1_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#AssessmentResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CropObjectBuildingStepsTest1_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPObjectBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CropObjectBuildingStepsTest1_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropObjectBuildingStepsTest1_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropObjectBuildingStepsTest1_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#CropRefArch_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#CropRefArch_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#CropRefArch_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPReferenceArchitecture_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#CropRefArch_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropRefArch_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropRefArch_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\ExecutionGraphBuildingSteps.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionGraphBuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#ExecutionGraphBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionGraphBuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionGraphBuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\ExecutionManagerBuildingSteps.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_ExecutionSample_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_ExecutionSample_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\ExecutionSample.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#ExecutionSample_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#ExecutionSample_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionSample_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionSample_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#KRCGraphBuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#KRCGraphBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#KRCGraphBuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_KRCGraphBuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_PhysicalLocation -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_PhysicalLocation">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#PhysicalLocation"/>
+        <physicalLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C:\git\java\jcrop-core\src\test\resources\crop-projects\jcropeditor\resources\KRCGraphBuildingSteps.txt</physicalLocation>
+        <physicalFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</physicalFormat>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#XManagerBuildingSteps_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#XManagerBuildingSteps_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#SupportResource"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#XManagerBuildingSteps_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#ExecutionManagerBuildingSteps_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#XManagerBuildingSteps_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#XManagerBuildingSteps_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_XManagerBuildingSteps_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KObject.owl#jcropeditor_KObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/KObject.owl#jcropeditor_KObject">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KProduct"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#jcropeditor_ConceptGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/ConceptGraph.owl#file:/C:/git/java/jcrop-core/src/test/resources/crop-projects/jcropeditor/content_ontologies/cropeditor.owl"/>
+        <LearningObject:targets rdf:resource="http://www.cs.teilar.gr/ontologies/KConcept.owl#CROPEditor_Concept"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KRC.owl#jcropeditor_KRC"/>
+        <LearningObject:describedBy rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#jcropeditor_LOM"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_jcropeditor_ExecutionModel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_CROPEditorTest1_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_CROPEditorTest1_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditor_CROPEditorTest1_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_jcropeditor_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPEditor_jcropeditor_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditorTest1_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CropObjectBuildingStepsTest1_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_jcropeditor_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectBuildingSteps_jcropeditor_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#BuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_jcropeditor_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPObjectsDesignPrinciples_jcropeditor_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_CropRefArch_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_CropRefArch_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPReferenceArchitecture_CropRefArch_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_jcropeditor_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#CROPReferenceArchitecture_jcropeditor_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CropRefArch_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#XManagerBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_ExecutionSample_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#ExecutionSample_ExecutionSample_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_ExecutionSample_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_BuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_BuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_KRCNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/KRC.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_KRCNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#BuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#BuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPEditorTest1_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPEditorTest1_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPObjectsDesignPrinciples_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CROPObjectsDesignPrinciples_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ConceptGraphBuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ConceptGraphBuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ContentOntologyBuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ContentOntologyBuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropObjectBuildingStepsTest1_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropObjectBuildingStepsTest1_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropRefArch_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#CropRefArch_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionGraphBuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionGraphBuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionSample_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#ExecutionSample_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#KRCGraphBuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#KRCGraphBuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#XManagerBuildingSteps_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#XManagerBuildingSteps_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#jcropeditor_LOM -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#jcropeditor_LOM">
+        <rdf:type rdf:resource="http://www.cs.teilar.gr/ontologies/LearningObjectMetaData.owl#LOM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#BuildingSteps_act_Default_jcropeditor_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#BuildingSteps_act_Default_jcropeditor_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#BuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPEditorTest1_act_Default_CROPEditorTest1_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPEditorTest1_act_Default_CROPEditorTest1_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditor_CROPEditorTest1_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPEditorTest1_act_Default_jcropeditor_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPEditorTest1_act_Default_jcropeditor_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPEditorTest1_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPObjectsDesignPrinciples_act_Default_CROPObjectsDesignPrinciples_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPObjectsDesignPrinciples_act_Default_CROPObjectsDesignPrinciples_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_CROPObjectsDesignPrinciples_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPObjectsDesignPrinciples_act_Default_jcropeditor_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CROPObjectsDesignPrinciples_act_Default_jcropeditor_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectsDesignPrinciples_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ConceptGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ConceptGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ConceptGraphBuildingSteps_act_Default_ConceptGraphBuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ConceptGraphBuildingSteps_act_Default_ConceptGraphBuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ConceptGraphBuildingSteps_ConceptGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ContentOntologyBuildingSteps_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ContentOntologyBuildingSteps_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ContentOntologyBuildingSteps_act_Default_ContentOntologyBuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ContentOntologyBuildingSteps_act_Default_ContentOntologyBuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ContentOntologyBuildingSteps_ContentOntologyBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CropObjectBuildingStepsTest1_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CropObjectBuildingStepsTest1_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CropObjectBuildingStepsTest1_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CropObjectBuildingStepsTest1_act_Default_CropObjectBuildingStepsTest1_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CropObjectBuildingStepsTest1_act_Default_CropObjectBuildingStepsTest1_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPObjectBuildingSteps_CropObjectBuildingStepsTest1_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CropRefArch_act_Default_CropRefArch_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CropRefArch_act_Default_CropRefArch_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CROPReferenceArchitecture_CropRefArch_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#CropRefArch_act_Default_jcropeditor_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#CropRefArch_act_Default_jcropeditor_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#CropRefArch_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionGraphBuildingSteps_act_Default_ExecutionGraphBuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionGraphBuildingSteps_act_Default_ExecutionGraphBuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionGraphBuildingSteps_ExecutionGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionSample_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionSample_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionSample_act_Default_ExecutionSample_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#ExecutionSample_act_Default_ExecutionSample_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionSample_ExecutionSample_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#KRCGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#KRCGraphBuildingSteps_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#KRCGraphBuildingSteps_act_Default_KRCGraphBuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#KRCGraphBuildingSteps_act_Default_KRCGraphBuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#KRCGraphBuildingSteps_KRCGraphBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#XManagerBuildingSteps_act_Default_BuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#XManagerBuildingSteps_act_Default_BuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#XManagerBuildingSteps_KObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XGraph.owl#XManagerBuildingSteps_act_Default_XManagerBuildingSteps_LearningActNode -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XGraph.owl#XManagerBuildingSteps_act_Default_XManagerBuildingSteps_LearningActNode">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/KObject.owl#ExecutionManagerBuildingSteps_XManagerBuildingSteps_PhysicalLocation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_BuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_BuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_BuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_BuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPEditorTest1_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPEditorTest1_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_CROPEditorTest1_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPEditorTest1_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPObjectsDesignPrinciples_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPObjectsDesignPrinciples_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_CROPObjectsDesignPrinciples_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CROPObjectsDesignPrinciples_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ConceptGraphBuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ConceptGraphBuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_ConceptGraphBuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ConceptGraphBuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ContentOntologyBuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ContentOntologyBuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_ContentOntologyBuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ContentOntologyBuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropObjectBuildingStepsTest1_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropObjectBuildingStepsTest1_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_CropObjectBuildingStepsTest1_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropObjectBuildingStepsTest1_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropRefArch_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropRefArch_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_CropRefArch_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_CropRefArch_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionGraphBuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionGraphBuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_ExecutionGraphBuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionGraphBuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionSample_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionSample_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_ExecutionSample_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_ExecutionSample_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_KRCGraphBuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_KRCGraphBuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_KRCGraphBuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_KRCGraphBuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_XManagerBuildingSteps_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_XManagerBuildingSteps_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_XManagerBuildingSteps_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_XManagerBuildingSteps_ExecutionManager"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.teilar.gr/ontologies/XModel.owl#Default_jcropeditor_ExecutionModel -->
+
+    <rdf:Description rdf:about="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_jcropeditor_ExecutionModel">
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XGraph.owl#Default_jcropeditor_XGraph"/>
+        <graph:hasAssociated rdf:resource="http://www.cs.teilar.gr/ontologies/XModel.owl#Default_jcropeditor_ExecutionManager"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

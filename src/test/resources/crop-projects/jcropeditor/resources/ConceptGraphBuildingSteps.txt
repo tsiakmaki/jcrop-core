@@ -1,0 +1,7 @@
+==Step 2 - Creating the Concept Graph==
+
+The Concept Graph relates Concepts with the is-prerequisite-of relation. Authors can drag & drop classes from Content Ontology to Concept Graph and create edges among them. During building the Concept Graph, Authors will discover the coexistence of many conceptualizations that one educational objective can have. 
+
+[[File:/resources/jcropeditor/img/img6.png|border|Figure 1: Concept Graph example]]
+
+In Figure 1 Complex Number System Concept requires the knowledge of Properties of Conjugates and Absolute Value. The later, requires Operation. Operation Concept needs Complex Number Definition, and Definition about Real Number System Concept. 

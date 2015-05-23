@@ -1,0 +1,19 @@
+Operation
+
+
+
+Equivalent Classes
+    - Operation
+
+
+SuperClasses/ Inherited anonymous classes
+    - Thing
+
+
+Disjoint Classess
+    - Nothing
+
+
+Members
+
+

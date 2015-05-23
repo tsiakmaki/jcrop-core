@@ -1,0 +1,11 @@
+==Step 5 - Creating the Execution Graph==
+
+Finally, the X Graph is built on top of the KRC. Each Object that is associated with a KRC Node becomes an X Graph Node. An X Graph Node is defined as a Learning Act (a Learning Act is associated with one CROP Object or with a Physical Location of a Resource Object), Control, or Dialogue Node. Learning Acts are grouped by their target Concept, a property that the associated KRC Node implied, defining X sub-Graphs. 
+
+Authors can further group X Nodes and X sub-Graphs defining sequence and parallel groups. Edges of X Graph impose the sequence of the execution of Objects. X Graph Edges connect X Nodes, X sub-Graphs or groups. KRC edges are not transferred to XGraph, as they connect unit concepts, not groups or sub-graphs, but their prerequisite-of restrictions still stand. E.g. by default the XModel cannot execute Addition Object if Learner does not know about Complex Number Definition, and Authors do not need to explicitly state it again. Authors are allowed to add further edges, Controls and Dialogues in order to restrict the learning process. 
+
+Keep in mind that Objects that are associated to a KRC Node do not have any sequence restriction. If strong restrictions need to be applied, it may imply that Authors should consider refactoring Content Ontology and Concept Graph by splitting or merging Concepts. Every Product can have one or more XGraphs. Resources' XGraphs are simple: by default they contain only one Learning Act that directs to the Physical Location of the actual resource.
+
+[[File:/resources/jcropeditor/img/img8.png|border|Figure 1 : XGraph]]
+
+In Figure 1 XGraph only specifies the order of the Resources in the Operation group of Nodes: first Learners learn about Conjuration, then Addition, then Subtraction, then Multiplication and finally about Division.

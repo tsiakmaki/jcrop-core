@@ -1,0 +1,19 @@
+ComplexNumberSystem
+
+
+
+Equivalent Classes
+    - ComplexNumberSystem
+
+
+SuperClasses/ Inherited anonymous classes
+    - Thing
+
+
+Disjoint Classess
+    - Nothing
+
+
+Members
+
+
